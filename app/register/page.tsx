@@ -6,7 +6,13 @@ export const metadata = {
 };
 
 function pages() {
-  return <h3 className="mt-[200px]">Register</h3>;
+  return (
+    <form action="" method="post" className="form">
+      <input type="text" placeholder="Username" />
+      <input type="text" placeholder="Password" />
+      <button type="submit">Register</button>
+    </form>
+  );
 }
 
 export default pages;

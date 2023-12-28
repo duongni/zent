@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { useState } from "react";
 import { SlMenu, SlArrowUp, SlMagnifier } from "react-icons/sl";
+import { useMediaQuery } from "react-responsive";
 
 const navbar = () => {
   const [menuIcon, setIcon] = useState(false);
@@ -11,28 +12,40 @@ const navbar = () => {
   const handleSmallScreenNav = () => {
     setIcon(!menuIcon);
   };
+  const isMediumScreen = useMediaQuery({ maxWidth: 768 }); // Adjust the maximum width as needed
+  const navStyle = {
+    maxWidth: "1366px",
+    margin: "0 auto",
+    height: "100px",
+    padding: "1rem 2rem",
+    display: isMediumScreen ? "flex" : "grid",
+    gridTemplateColumns: isMediumScreen ? "10fr 1fr" : "1fr 1fr 1fr", // Adjust grid columns as needed
+    justifyContent: isMediumScreen ? "space-between" : "initial", // Added line
+  };
 
   return (
     <header className=" bg-transparent text-black text-lg w-full ease-in duration-300 fixed top-0 left-0 z-10">
-      <nav className="max-w-[1366px] mx-auto h-[100px] flex justify-between items-center p-4">
+      <nav style={navStyle}>
         {/* larger screen navigation*/}
-        <ul className="hidden md:flex uppercase text-sm font-light justify-around ">
-          <li className="hover:text-gray-400  ml-4 ">
-            <Link href="/hotels">HOTELS</Link>
-          </li>
-          <li className="hover:text-gray-400  ml-6 ">
-            <Link href="/villas">VILLAS</Link>
-          </li>
-          <li className="hover:text-gray-400 ml-6 ">
-            <Link href="/login">JOURNAL</Link>
-          </li>
-        </ul>
-        <div>
+        {!isMediumScreen && (
+          <ul className="hidden md:flex uppercase text-sm font-light justify-start items-center">
+            <li className="hover:text-gray-400  ml-4 ">
+              <Link href="/hotels">HOTELS</Link>
+            </li>
+            <li className="hover:text-gray-400  ml-6 ">
+              <Link href="/villas">VILLAS</Link>
+            </li>
+            <li className="hover:text-gray-400 ml-6 ">
+              <Link href="/login">JOURNAL</Link>
+            </li>
+          </ul>
+        )}
+        <div className="flex md:flex items-center justify-center ">
           <Link href="/" onClick={handleSmallScreenNav}>
-            <span className="logo font-bold text-4xl">ZEN</span>
+            <span className="logo font-bold text-4xl mx-auto">ZEN</span>
           </Link>
         </div>
-        <div className="hidden md:flex">
+        <div className="hidden md:flex items-center justify-end">
           <Link href="">
             <SlMagnifier size={20} />
           </Link>
@@ -40,7 +53,10 @@ const navbar = () => {
 
         {/* smaller screen icons switch when screen is smaller than medium size*/}
         {/* onclick change the icon*/}
-        <div onClick={handleSmallScreenNav} className="flex md:hidden">
+        <div
+          onClick={handleSmallScreenNav}
+          className="flex md:hidden items-center justify-end"
+        >
           {/* if menu icon changes from false to true, I want to do something, else, I want to do something else */}
           {menuIcon ? <SlArrowUp size={20} /> : <SlMenu size={20} />}
         </div>
@@ -54,7 +70,7 @@ const navbar = () => {
           }
         >
           <div className="w-full">
-            <ul className="">
+            <ul>
               <li
                 onClick={handleSmallScreenNav}
                 className="px-5 hover:text-gray-400 cursor-pointer text-4xl tracking-wide ml-6 leading-loose"
@@ -75,9 +91,15 @@ const navbar = () => {
               </li>
               <li
                 onClick={handleSmallScreenNav}
-                className="px-5 hover:text-gray-400 cursor-pointer text-4xl tracking-wider ml-6 leading-loose"
+                className="px-5 hover:text-gray-400 cursor-pointer text-3xl tracking-wider ml-6 leading-loose"
               >
                 <Link href="/login">LogIn</Link>
+              </li>
+              <li
+                onClick={handleSmallScreenNav}
+                className="px-5 hover:text-gray-400 cursor-pointer text-3xl tracking-wider ml-6 leading-loose"
+              >
+                <Link href="/register">Register</Link>
               </li>
             </ul>
           </div>
