@@ -42,10 +42,10 @@ const SideNavBar = () => {
   ];
 
   return (
-    <div className="flex flex-col mt-[100px]  w-[80px] sticky text-xs border-r-1  shadow-md">
+    <div className=" flex flex-col mt-[100px]  w-[80px] sticky text-xs border-r-1  shadow-md">
       {typeOfPlace.map((item) => (
         <div
-          className=" flex flex-col justify-center items-center py-4 hover:text-gray-400"
+          className=" sm:hide flex flex-col justify-center items-center py-4 hover:text-gray-400"
           key={item.id}
         >
           {item.icon}
