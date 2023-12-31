@@ -30,13 +30,13 @@ const navbar = () => {
         {!isMediumScreen && (
           <ul className="hidden md:flex uppercase text-sm font-light justify-start items-center">
             <li className="hover:text-gray-400  ml-4 ">
-              <Link href="/hotels">HOTELS</Link>
+              <Link href="/trails">TRAILS</Link>
             </li>
             <li className="hover:text-gray-400  ml-6 ">
-              <Link href="/villas">VILLAS</Link>
+              <Link href="/parks">PARKS</Link>
             </li>
             <li className="hover:text-gray-400 ml-6 ">
-              <Link href="/journal">JOURNAL</Link>
+              <Link href="/camps">CAMPSGROUND</Link>
             </li>
           </ul>
         )}
@@ -46,7 +46,7 @@ const navbar = () => {
           </Link>
         </div>
         <div className="hidden md:flex items-center justify-end">
-          <Link href="">
+          <Link href="/search">
             <SlMagnifier size={20} />
           </Link>
         </div>
@@ -75,19 +75,19 @@ const navbar = () => {
                 onClick={handleSmallScreenNav}
                 className="px-5 hover:text-gray-400 cursor-pointer text-4xl tracking-wide ml-6 leading-loose"
               >
-                <Link href="/hotels">HOTELS</Link>
+                <Link href="/trails">TRAILS</Link>
               </li>
               <li
                 onClick={handleSmallScreenNav}
                 className="px-5 hover:text-gray-400 cursor-pointer text-4xl tracking-wider ml-6 leading-loose"
               >
-                <Link href="/villas">VILLAS</Link>
+                <Link href="/parks">PARKS</Link>
               </li>
               <li
                 onClick={handleSmallScreenNav}
                 className="px-5 hover:text-gray-400 cursor-pointer text-4xl tracking-wide ml-6 leading-loose"
               >
-                <Link href="/login">JOURNAL</Link>
+                <Link href="/camps">CAMPGROUNDS</Link>
               </li>
               <li
                 onClick={handleSmallScreenNav}

@@ -7,6 +7,7 @@ body {
   color: #000;
   max-width: 1366px;
   margin: 0 auto;
+  padding: 1rem 2rem;
 }
 /*Hide scrollbar for Chrome, Safari */
 body::-webkit-scrollbar {
@@ -19,7 +20,4 @@ body {
 }
 h4 {
   font-family: "Lato", sans-serif;
-}
-.hotelCard {
-  max-width: 400;
 }
