@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { SlEye } from "react-icons/sl";
-import { useMediaQuery } from "react-responsive";
 
 export const metadata = {
   title: "Register",
@@ -9,7 +8,7 @@ export const metadata = {
   description: "Register to become a part of our journey",
 };
 
-function pages() {
+function Page() {
   return (
     <div className=" flex flex-col justify-center items-center my-52">
       <p className="text-center mb-5 text-xl font-extralight tracking-wide ">
@@ -71,4 +70,4 @@ function pages() {
   );
 }
 
-export default pages;
+export default Page;

@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import Page from "../parks/page";
 
 interface IndexPageProps {
@@ -20,10 +20,14 @@ interface Park {
 
 export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
   try {
+    console.log("Fetching data from API");
     const apiUrl =
       "https://developer.nps.gov/api/v1/parks?stateCode=WA&api_key=mh9ahtxIO5fhbnKFaeu6dMleOmK11DGk289gULQO";
+    console.log("API URL:", apiUrl);
 
     const response = await axios.get<{ data: Array<Park> }>(apiUrl);
+    console.log("API Response:", response);
+
     const parks = response.data.data.map((park) => ({
       name: park.fullName,
       img: park.images[0]?.url || "",
@@ -44,11 +48,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
           .join(", ") || "",
     }));
 
-    if (!parks) {
-      return {
-        notFound: true,
-      };
-    }
+    console.log("Transformed Parks Data:", parks);
 
     return {
       props: { parks },

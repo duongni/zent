@@ -1,14 +1,13 @@
-import Trails from "./trails/page";
+import Parks from "./parks/page";
+
+console.log("Hello");
 
 export default function Home() {
   return (
-    <div className="py-3 md:grid grid-cols-2 2xl:grid-cols-3 grid-rows-[750px] ">
-      <Trails
-        name="Susafa"
-        img="/images/santa teresa/pool-santa-teresa.jpeg"
-        location="Sicily, Italy"
-        price={400}
-      />
+    <div>
+      <div className="py-3 md:grid grid-cols-2 2xl:grid-cols-3 grid-rows-[750px] ">
+        <Parks />
+      </div>
     </div>
   );
 }

@@ -15,6 +15,7 @@ interface Props {
 }
 
 const Page: React.FC<Props> = ({ parks }) => {
+  console.log("Received Parks in Page Component:", parks); // Add this log
   const [isLiked, setLike] = useState(false);
 
   const handleheartClick = () => {
