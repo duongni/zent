@@ -1,6 +1,6 @@
 import React from "react";
-import SideNavBar from "../components/SideNavBar";
-import SearchBar from "../components/SearchBar";
+import SideNavBar from "../../components/SideNavBar";
+import SearchBar from "../../components/SearchBar";
 
 const Search = () => {
   return (
