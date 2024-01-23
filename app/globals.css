@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Lato:wght@100;300;400;700;900&display=swap");
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   color: #000;
+  background-color: #fefcf8;
   max-width: 1366px;
   margin: 0 auto;
   padding: 1rem 2rem;
@@ -20,4 +25,15 @@ body {
 }
 h4 {
   font-family: "Lato", sans-serif;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

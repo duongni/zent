@@ -1,59 +1,37 @@
-"use client";
-import React, { useState } from "react";
-import Image from "next/image";
-import { SlHeart } from "react-icons/sl";
+import ParkCard from "@/components/ParkCard";
+import SearchBar from "@/components/SearchBar";
+import { fetchParks } from "@/utils";
 
-interface ParkProps {
-  name: string;
-  img: string;
-  state: string;
-  activities: string;
-}
-
-interface Props {
-  parks?: ParkProps[];
-}
-
-const Page: React.FC<Props> = ({ parks }) => {
-  console.log("Received Parks in Page Component:", parks); // Add this log
-  
-  const [isLiked, setLike] = useState(false);
-
-  const handleheartClick = () => {
-    setLike(!isLiked);
-  };
+export default async function Parks({ searchParams }: { searchParams: any }) {
+  const allParks = await fetchParks({
+    state: searchParams?.state || "",
+  });
+  //checking there is any data in allParks
+  const isDataEmpty =
+    !Array.isArray(allParks) || allParks.length < 1 || !allParks;
 
   return (
-    <div className="mt-[50px] mx-3 relative hotelCard">
-      {parks &&
-        parks.map((park, index) => (
-          <div key={index}>
-            <Image
-              className="hover:opacity-75 rounded"
-              src={park.img}
-              alt={`Park - ${park.name}`}
-              width={450}
-              height={600}
-              priority={false}
-            />
-            <SlHeart
-              size={20}
-              className={`absolute top-2 left-2 cursor-pointer ${
-                isLiked ? "text-white" : "text-opacity-20"
-              }`}
-              onClick={handleheartClick}
-            />
-
-            <h4 className="font-normal text-2xl tracking-widest my-2.5">
-              {park.name}
-            </h4>
-            <p className="mt-[-10px]">
-              {park.name} | {park.state} | {park.activities}
-            </p>
+    <div className="overflow-hidden max-container mx-auto xs:mt-5 object-contain mb-20">
+      <div className="mt-1 grid justify-center min-w-[300px] sm:px-16 px-6 py-2 pt-20">
+        <SearchBar />
+        <div className="flex justify-start flex-wrap items-center gap-2"></div>
+      </div>
+      <div>
+        {" "}
+        {!isDataEmpty ? (
+          <section>
+            <div className="grid 3xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14">
+              {allParks?.map((park) => (
+                <ParkCard park={park} />
+              ))}
+            </div>
+          </section>
+        ) : (
+          <div className="home__error-container">
+            <h2 className="text-black text-xl font-bold">Oops, no results</h2>
           </div>
-        ))}
+        )}
+      </div>
     </div>
   );
-};
-
-export default Page;
+}
