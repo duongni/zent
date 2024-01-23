@@ -35,14 +35,14 @@ const CampCard = ({ camp }: CampDetailsProps) => {
           {camp.name}
         </h2>
       </div>
-      <div className="relative w-full h-60 my-3 object-contain">
+      <div className="relative w-full h-80 my-3 object-contain">
         {camp.images && camp.images.length > 0 && (
           <Image
             src={camp.images[0].url}
             alt={camp.name}
-            width={450}
-            height={600}
-            priority //className="object-contain"
+            fill
+            priority
+            className="object-contain"
           />
         )}
       </div>

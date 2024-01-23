@@ -35,7 +35,8 @@ const ParkCard = ({ park }: ParkDetailsProps) => {
           src={park.images[0].url}
           alt={park.fullName}
           fill
-          priority //className="object-contain"
+          priority
+          className="object-contain"
         />
       </div>
       <p className="text-gray-30 text-[14px] mb-3">

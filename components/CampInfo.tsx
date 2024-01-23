@@ -58,17 +58,6 @@ const CampInfo = ({ isOpen, closeModel, camp }: CampDetailsProps) => {
                     <h1 className="font-normal text-2xl tracking-widest my-2.5 capitalize">
                       {camp.name}
                     </h1>
-
-                    <div className="-z-10 overflow-hidden  bg-cover bg-center bg-repeat rounded-lg mb-2 opacity-50">
-                      {camp.images && camp.images.length > 0 && (
-                        <Image
-                          src={camp.images[0].url}
-                          alt={camp.name}
-                          fill
-                          priority //className="object-contain"
-                        />
-                      )}
-                    </div>
                   </div>
                   <div>
                     <div>
@@ -110,13 +99,13 @@ const CampInfo = ({ isOpen, closeModel, camp }: CampDetailsProps) => {
                       {camp.images.map((image, index) => (
                         <div
                           key={index}
-                          className="h-[450px] relative shadow-md rounded-xl gap-8 overflow-x-auto mt-8"
+                          className="md:h-[800px] 2xl:h-[1000px] h-[450px] relative shadow-md rounded-xl gap-8 overflow-x-auto mt-8"
                         >
                           <Image
                             src={image.url}
                             alt={camp.name}
                             fill
-                            objectFit="cover"
+                            className="object-contain"
                           />
                         </div>
                       ))}

@@ -103,13 +103,13 @@ const ParkInfo = ({ isOpen, closeModel, park }: ParkDetailsProps) => {
                       {park.images.map((image, index) => (
                         <div
                           key={index}
-                          className="h-[450px] relative shadow-md rounded-xl gap-8 overflow-x-auto mt-8"
+                          className="md:h-[800px] 2xl:h-[1000px] h-[450px] relative shadow-md rounded-xl gap-8 overflow-x-auto mt-8"
                         >
                           <Image
                             src={image.url}
                             alt={park.fullName}
                             fill
-                            objectFit="cover"
+                            className="object-contain"
                           />
                         </div>
                       ))}

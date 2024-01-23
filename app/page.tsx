@@ -18,12 +18,15 @@ export default async function Home({ searchParams }: { searchParams: any }) {
 
   return (
     <div className="mt-[100px]">
-      <SearchBar />
+      <div className="mt-1 grid justify-center min-w-[300px] sm:px-16 px-6 py-2 pt-20">
+        <SearchBar />
+      </div>
+
       <div className="">
         <div>
           {!isDataEmpty ? (
             <section>
-              <div className="grid py-3 md:grid grid-cols-2 2xl:grid-cols-3 grid-rows-[750px]  w-full gap-8 pt-14">
+              <div className="grid 2xl:grid-cols-3 xl:grid-cols-2 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14">
                 {allCamps?.map((camp) => (
                   <CampCard camp={camp} />
                 ))}
@@ -39,7 +42,7 @@ export default async function Home({ searchParams }: { searchParams: any }) {
           {" "}
           {!isEmpty ? (
             <section>
-              <div className="grid py-3 md:grid grid-cols-2 2xl:grid-cols-3 grid-rows-[750px]  w-full gap-8 pt-14">
+              <div className="grid py-3 md:grid grid-cols-2 2xl:grid-cols-3 grid-rows-[500px] gap-8 pt-14">
                 {allParks?.map((park: any) => (
                   <ParkCard park={park} />
                 ))}

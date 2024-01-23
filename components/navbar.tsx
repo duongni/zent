@@ -24,14 +24,11 @@ const navbar = () => {
   };
 
   return (
-    <header className=" bg-transparent text-black text-lg w-full ease-in duration-300 fixed top-0 left-0 z-10">
+    <header className=" bg-white-10 text-black text-lg w-full h-[75px] ease-in duration-300 fixed top-0 left-0 z-10">
       <nav style={navStyle}>
         {/* larger screen navigation*/}
         {!isMediumScreen && (
           <ul className="hidden md:flex uppercase text-sm font-light justify-start items-center">
-            <li className="hover:text-gray-400  ml-4 ">
-              <Link href="/trails">TRAILS</Link>
-            </li>
             <li className="hover:text-gray-400  ml-6 ">
               <Link href="/parks">PARKS</Link>
             </li>
@@ -45,13 +42,16 @@ const navbar = () => {
             <span className="logo font-bold text-4xl mx-auto">ZEN</span>
           </Link>
         </div>
-        <div className="hidden md:flex items-center justify-end">
+        <div className="hover:text-gray-400 text-sm font-light ml-6 hidden md:flex items-center justify-end ">
+          <Link href="/parks">LOG IN</Link>
+        </div>
+        {/* <div className="hidden md:flex items-center justify-end">
           <Link href="/search">
             <SlMagnifier size={20} />
           </Link>
         </div>
 
-        {/* smaller screen icons switch when screen is smaller than medium size*/}
+         smaller screen icons switch when screen is smaller than medium size*/}
         {/* onclick change the icon*/}
         <div
           onClick={handleSmallScreenNav}
@@ -69,14 +69,8 @@ const navbar = () => {
               : "md:hidden absolute top-[100px] right-0 translate-x-full flex justify-center bg-gray-100 items-center w-full h-screen ease-in duration-300 bg-opacity-80"
           }
         >
-          <div className="w-full">
+          <div className="w-full ">
             <ul>
-              <li
-                onClick={handleSmallScreenNav}
-                className="px-5 hover:text-gray-400 cursor-pointer text-4xl tracking-wide ml-6 leading-loose"
-              >
-                <Link href="/trails">TRAILS</Link>
-              </li>
               <li
                 onClick={handleSmallScreenNav}
                 className="px-5 hover:text-gray-400 cursor-pointer text-4xl tracking-wider ml-6 leading-loose"
@@ -89,17 +83,12 @@ const navbar = () => {
               >
                 <Link href="/camps">CAMPGROUNDS</Link>
               </li>
+
               <li
                 onClick={handleSmallScreenNav}
                 className="px-5 hover:text-gray-400 cursor-pointer text-3xl tracking-wider ml-6 leading-loose"
               >
                 <Link href="/login">LogIn</Link>
-              </li>
-              <li
-                onClick={handleSmallScreenNav}
-                className="px-5 hover:text-gray-400 cursor-pointer text-3xl tracking-wider ml-6 leading-loose"
-              >
-                <Link href="/register">Register</Link>
               </li>
             </ul>
           </div>
