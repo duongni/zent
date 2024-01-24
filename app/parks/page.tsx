@@ -16,11 +16,11 @@ export default async function Parks({ searchParams }: { searchParams: any }) {
         <SearchBar />
         <div className="flex justify-start flex-wrap items-center gap-2"></div>
       </div>
-      <div>
+      <div className="">
         {" "}
         {!isDataEmpty ? (
           <section>
-            <div className="grid 3xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14">
+            <div className="grid 3xl:grid-cols-4 md:grid-cols-3 grid-cols-1 w-full gap-8 pt-14">
               {allParks?.map((park) => (
                 <ParkCard park={park} />
               ))}

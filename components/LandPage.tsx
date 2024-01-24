@@ -1,7 +1,13 @@
-import React from "react";
+import ExtraHeader from "./ExtraHeader";
+import Header from "./Header";
 
 const LandPage = () => {
-  return <div>LandPage</div>;
+  return (
+    <div className="overflow-hidden">
+      <Header />
+      <ExtraHeader />
+    </div>
+  );
 };
 
 export default LandPage;

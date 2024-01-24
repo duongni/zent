@@ -24,7 +24,7 @@ const navbar = () => {
   };
 
   return (
-    <header className=" bg-white-10 text-black text-lg w-full h-[85px] ease-in duration-300 fixed top-0 left-0 z-10">
+    <header className=" bg-white-10 text-black text-lg w-full h-[85px] ease-in duration-300 absolute top-0 left-0 z-50">
       <nav style={navStyle}>
         {/* larger screen navigation*/}
         {!isMediumScreen && (
@@ -55,7 +55,7 @@ const navbar = () => {
         {/* onclick change the icon*/}
         <div
           onClick={handleSmallScreenNav}
-          className="flex md:hidden items-center justify-end"
+          className="flex md:hidden items-center justify-end overflow-hidden"
         >
           {/* if menu icon changes from false to true, I want to do something, else, I want to do something else */}
           {menuIcon ? <SlArrowUp size={20} /> : <SlMenu size={20} />}
@@ -65,11 +65,11 @@ const navbar = () => {
         <div
           className={
             menuIcon
-              ? "md:hidden absolute top-[100px] right-0 bottom-0 left-0 flex justify-center bg-gray-100 items-center w-full h-screen ease-in duration-300 bg-opacity-80"
-              : "md:hidden absolute top-[100px] right-0 translate-x-full flex justify-center bg-gray-100 items-center w-full h-screen ease-in duration-300 bg-opacity-80"
+              ? "md:hidden absolute top-[100px] right-0 bottom-0 left-0 flex justify-center bg-gray-100 items-center w-full h-screen ease-in duration-300 bg-opacity-80 overflow-hidden"
+              : "md:hidden absolute top-[100px] right-0 translate-x-full flex justify-center bg-gray-100 items-center w-full h-screen ease-in duration-300 bg-opacity-80 overflow-hidden"
           }
         >
-          <div className="w-full ">
+          <div className="w-full overflow-hidden">
             <ul>
               <li
                 onClick={handleSmallScreenNav}
