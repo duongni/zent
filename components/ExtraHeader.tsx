@@ -4,7 +4,7 @@ const ExtraHeader = () => {
   return (
     <section className="relative mt-0 sm:mt-24 lg:mt-40 pb-16 mb-16 grid gap-16 sm:gap-24 lg:gap-40 overflow-hidden text-center">
       <Image
-        src="/angel-landing-zion.png"
+        src="/philipp-pilz.jpg"
         aria-hidden="true"
         fill={true}
         alt=""
