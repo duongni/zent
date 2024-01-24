@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import ExtraHeader from "./ExtraHeader";
 
 const Header = () => {
   const router = useRouter();
@@ -31,7 +30,7 @@ const Header = () => {
           <div className="">Sign in for a serene adventure with Zen.</div>
           <div className="">Explore nature's beauty effortlessly!</div>
         </div>
-        <div className="flex flex-row bg-yellow-10 -mt-2 max-w-{600px} items-center rounded-full mt-5 focus:outline-none hover:bg-yellow-10 hover:text-white hover:opacity-60 mb-5">
+        <div className="flex flex-row bg-yellow-10  max-w-{600px} items-center rounded-full mt-5 focus:outline-none hover:bg-yellow-10 hover:text-white hover:opacity-60 mb-5">
           <button className="px-5 py-2 rounded-full" onClick={handleJoinClick}>
             Join here
           </button>
