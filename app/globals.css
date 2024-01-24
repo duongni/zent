@@ -37,3 +37,6 @@ h4 {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+.bg-image {
+  @background-image: linear-gradient(to top, #a4e463, #5df6c8, #83faff, #d8f8ff, #ffffff);
+}

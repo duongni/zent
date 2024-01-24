@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fira_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/navbar";
+import Provider from "../components/Provider";
 
 export const metadata: Metadata = {
   title: "ZEN",
@@ -22,8 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={fira_mono.className}>
-        <Navbar />
-        {children}
+        <Provider>
+          <Navbar />
+          {children}
+        </Provider>
       </body>
     </html>
   );

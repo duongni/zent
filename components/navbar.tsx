@@ -24,7 +24,7 @@ const navbar = () => {
   };
 
   return (
-    <header className=" bg-white-10 text-black text-lg w-full h-[75px] ease-in duration-300 fixed top-0 left-0 z-10">
+    <header className=" bg-white-10 text-black text-lg w-full h-[85px] ease-in duration-300 fixed top-0 left-0 z-10">
       <nav style={navStyle}>
         {/* larger screen navigation*/}
         {!isMediumScreen && (

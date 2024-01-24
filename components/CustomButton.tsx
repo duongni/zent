@@ -1,6 +1,7 @@
 "use client";
 import { CustomButtonProps } from "@/types";
 import Image from "next/image";
+import { GoArrowUpRight } from "react-icons/go";
 
 const CustomButton = ({
   title,
@@ -19,13 +20,8 @@ const CustomButton = ({
     >
       <span className={`flex-1 ${textStyles}`}>{title}</span>
       {rightIcon && (
-        <div className="relative w-6 h-6">
-          <Image
-            src={rightIcon}
-            alt="right icon"
-            fill
-            className="object-contain"
-          />
+        <div className="relative bottom-0 right-0 w-10 align-baseline h-30">
+          <GoArrowUpRight height={30} width={30} alt="right icon" />
         </div>
       )}
     </button>

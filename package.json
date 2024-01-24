@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
+    "@react-google-maps/api": "^2.19.2",
     "axios": "^1.6.4",
     "next": "14.0.4",
+    "next-auth": "^4.24.5",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
