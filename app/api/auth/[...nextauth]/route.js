@@ -37,15 +37,19 @@ const handler = NextAuth({
         const userExists = await User.findOne({
           email: profile.email,
         });
+        console.log(userExists);
         //if not, create a new user and save it to the database
-        if (!userExists) {
-          await User.create({
+        // Instead of .then() and .catch(), use try/catch with await
+        try {
+          const user = await User.create({
             email: profile.email,
             image: profile.picture,
             username: profile.name.replace(" ", "").toLowerCase(),
-          })
-            .then((user) => console.log("User created:", user))
-            .catch((error) => console.error("Error creating user:", error));
+          });
+
+          console.log("User created:", user);
+        } catch (error) {
+          console.error("Error creating user:", error);
         }
         //if sign in
 
