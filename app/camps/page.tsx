@@ -14,7 +14,7 @@ export default async function Camps({ searchParams }: { searchParams: any }) {
     !Array.isArray(allCamps) || allCamps.length < 1 || !allCamps;
 
   return (
-    <div className="overflow-hidden max-container mx-auto object-contain mb-20">
+    <div className="overflow-hidden max-w-[1366px] mx-auto object-contain mb-20">
       <div className="mt-1 grid justify-center min-w-[300px] sm:px-16 px-6 py-2 pt-20">
         <SearchBar />
         <div className="flex justify-start flex-wrap items-center gap-2"></div>

@@ -24,8 +24,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={fira_mono.className}>
         <Provider>
-          <Navbar />
-          {children}
+          <div className="overflow-hidden h-screen overflow-y-auto ">
+            <Navbar />
+            {children}
+          </div>
         </Provider>
       </body>
     </html>

@@ -3,9 +3,8 @@ import Header from "./Header";
 
 const LandPage = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="preserve-3d">
       <Header />
-      <ExtraHeader />
     </div>
   );
 };

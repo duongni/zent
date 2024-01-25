@@ -5,8 +5,11 @@ import Link from "next/link";
 import { useState } from "react";
 import { SlMenu, SlArrowUp, SlMagnifier } from "react-icons/sl";
 import { useMediaQuery } from "react-responsive";
+import { useSession, signIn, signOut, getProviders } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
-const navbar = () => {
+const Navbar = () => {
+  const isUserLoggedIn = true;
   const [menuIcon, setIcon] = useState(false);
 
   const handleSmallScreenNav = () => {
@@ -19,14 +22,15 @@ const navbar = () => {
     height: "100px",
     padding: "1rem 2rem",
     display: isMediumScreen ? "flex" : "grid",
-    gridTemplateColumns: isMediumScreen ? "10fr 1fr" : "1fr 1fr 1fr", // Adjust grid columns as needed
+    gridTemplateColumns: isMediumScreen ? "1fr 1fr" : "1fr 1fr 1fr", // Adjust grid columns as needed
     justifyContent: isMediumScreen ? "space-between" : "initial", // Added line
   };
 
   return (
-    <header className=" bg-white-10 text-black text-lg w-full h-[85px] ease-in duration-300 absolute top-0 left-0 z-50">
+    <header className=" bg-white text-black text-lg w-full h-[85px] ease-in duration-300 absolute top-0 left-0 z-50 bg-white-10">
       <nav style={navStyle}>
-        {/* larger screen navigation*/}
+       {isUserLoggedIn ? ( ) : (<> </>)}
+        
         {!isMediumScreen && (
           <ul className="hidden md:flex uppercase text-sm font-light justify-start items-center">
             <li className="hover:text-gray-400  ml-6 ">
@@ -45,14 +49,7 @@ const navbar = () => {
         <div className="hover:text-gray-400 text-sm font-light ml-6 hidden md:flex items-center justify-end ">
           <Link href="/parks">LOG IN</Link>
         </div>
-        {/* <div className="hidden md:flex items-center justify-end">
-          <Link href="/search">
-            <SlMagnifier size={20} />
-          </Link>
-        </div>
-
-         smaller screen icons switch when screen is smaller than medium size*/}
-        {/* onclick change the icon*/}
+       
         <div
           onClick={handleSmallScreenNav}
           className="flex md:hidden items-center justify-end overflow-hidden"
@@ -65,8 +62,8 @@ const navbar = () => {
         <div
           className={
             menuIcon
-              ? "md:hidden absolute top-[100px] right-0 bottom-0 left-0 flex justify-center bg-gray-100 items-center w-full h-screen ease-in duration-300 bg-opacity-80 overflow-hidden"
-              : "md:hidden absolute top-[100px] right-0 translate-x-full flex justify-center bg-gray-100 items-center w-full h-screen ease-in duration-300 bg-opacity-80 overflow-hidden"
+              ? "md:hidden absolute top-[100px] right-0 bottom-0 left-0 flex justify-center bg-yellow-10 items-center w-full h-screen ease-in duration-300 bg-opacity-90 overflow-hidden"
+              : "md:hidden absolute top-[100px] right-0 translate-x-full flex justify-center bg-yellow-10 items-center w-full h-screen ease-in duration-300 bg-opacity-90 overflow-hidden"
           }
         >
           <div className="w-full overflow-hidden">
@@ -98,4 +95,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;

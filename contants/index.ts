@@ -1,3 +1,11 @@
+export const NAV_LINKS = [
+  { href: "/", key: "home", label: "Home" },
+
+  { href: "/camps", key: "camps", label: "Camps" },
+  { href: "/parks", key: "parks", label: "Parks" },
+  { href: "/login", key: "login", label: "Login" },
+];
+
 export const states = [
   "Alabama - AL",
   "Alaska - AK",

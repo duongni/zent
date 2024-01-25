@@ -9,10 +9,9 @@
 }
 body {
   color: #000;
-  background-color: #fefcf8;
-  max-width: 1366px;
+  background-color: #fff;
+
   margin: 0 auto;
-  padding: 1rem 2rem;
 }
 /*Hide scrollbar for Chrome, Safari */
 body::-webkit-scrollbar {

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import CustomButton from "./CustomButton";
 import ParkInfo from "./ParkInfo";
+import { GoArrowUpRight } from "react-icons/go";
 
 interface ParkDetailsProps {
   park: ParkDetails;
@@ -44,10 +45,9 @@ const ParkCard = ({ park }: ParkDetailsProps) => {
       </p>
       <div className="hidden group-hover:flex absolute bottom-0 w-full z-10"></div>
       <CustomButton
-        title="View More"
-        containerStyles="w-full py-[10px] rounded-full bg-yellow-10"
-        textStyles="text-white text-[14px] leading-[17px] font-bold"
+        containerStyles="w-full py-[10px] rounded-full bg-transparent flex items-end align-baseline"
         handleClick={() => setIsOpen(true)}
+        rightIcon={<GoArrowUpRight height={30} width={43} alt="right icon" />}
       />
       <ParkInfo
         isOpen={isOpen}

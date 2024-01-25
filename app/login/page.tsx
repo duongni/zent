@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import React, { useEffect } from "react";
-import { SlEye } from "react-icons/sl";
+
 import { useSession, signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -18,7 +17,7 @@ function Login() {
   }, [session]);
 
   return (
-    <div className="max-h-[100vh]">
+    <div className="max-h-[100vh] ">
       <div className=" flex flex-col justify-center items-center my-52">
         {" "}
         <p className="text-center mb-5  mt-10 text-xl font-extralight tracking-wide ">
@@ -36,18 +35,19 @@ function Login() {
           </button>
         </div>
         <div
-          className="absolute inset-0 mt-[600px] overflow-hidden z-[-10] bg-image"
+          className="absolute inset-0 mt-[500px] overflow-hidden z-[-10] bg-image"
           inset-x-0
           bottom-0
         >
           {" "}
           <Image
-            src="/bottom-bg.jpg"
-            alt="park artwork"
+            src="/hello-park.jpeg"
+            alt="on Top of"
             fill
             priority
             objectFit="cover"
             objectPosition="bottom"
+            className="absolute h-full bg-center w-full -z-20 object-cover object-center xs:w-[480px] md:w-[800px] xl:w-[1300px] "
           />
         </div>
       </div>

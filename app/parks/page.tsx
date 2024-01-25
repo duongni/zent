@@ -11,7 +11,7 @@ export default async function Parks({ searchParams }: { searchParams: any }) {
     !Array.isArray(allParks) || allParks.length < 1 || !allParks;
 
   return (
-    <div className="overflow-hidden max-container mx-auto xs:mt-5 object-contain mb-20">
+    <div className="overflow-hidden mx-auto xs:mt-5 object-contain max-w-[1366px] mb-20">
       <div className="mt-1 grid justify-center min-w-[300px] sm:px-16 px-6 py-2 pt-20">
         <SearchBar />
         <div className="flex justify-start flex-wrap items-center gap-2"></div>
