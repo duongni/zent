@@ -2,93 +2,93 @@
 
 import React from "react";
 import Link from "next/link";
-import { useState } from "react";
+import Image from "next/image";
+import { useState, useEffect } from "react";
 import { SlMenu, SlArrowUp, SlMagnifier } from "react-icons/sl";
 import { useMediaQuery } from "react-responsive";
-import { useSession, signIn, signOut, getProviders } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import CustomButton from "./CustomButton";
 
 const Navbar = () => {
   const isUserLoggedIn = true;
-  const [menuIcon, setIcon] = useState(false);
+  const [providers, setProviders] = useState(null);
 
-  const handleSmallScreenNav = () => {
-    setIcon(!menuIcon);
-  };
-  const isMediumScreen = useMediaQuery({ maxWidth: 768 }); // Adjust the maximum width as needed
-  const navStyle = {
-    maxWidth: "1366px",
-    margin: "0 auto",
-    height: "100px",
-    padding: "1rem 2rem",
-    display: isMediumScreen ? "flex" : "grid",
-    gridTemplateColumns: isMediumScreen ? "1fr 1fr" : "1fr 1fr 1fr", // Adjust grid columns as needed
-    justifyContent: isMediumScreen ? "space-between" : "initial", // Added line
-  };
+  useEffect(() => {
+    (async () => {
+      const res = await getProviders();
+      setProviders(res);
+    })();
+  }, []);
 
   return (
-    <header className=" bg-white text-black text-lg w-full h-[85px] ease-in duration-300 absolute top-0 left-0 z-50 bg-white-10">
-      <nav style={navStyle}>
-       {isUserLoggedIn ? ( ) : (<> </>)}
-        
-        {!isMediumScreen && (
-          <ul className="hidden md:flex uppercase text-sm font-light justify-start items-center">
-            <li className="hover:text-gray-400  ml-6 ">
-              <Link href="/parks">PARKS</Link>
-            </li>
-            <li className="hover:text-gray-400 ml-6 ">
-              <Link href="/camps">CAMPSGROUND</Link>
-            </li>
-          </ul>
-        )}
-        <div className="flex md:flex items-center justify-center ">
-          <Link href="/" onClick={handleSmallScreenNav}>
-            <span className="logo font-bold text-4xl mx-auto">ZEN</span>
+    <header className="text-black text-lg w-full h-[85px] ease-in duration-300 relative top-0 left-0 z-50 ">
+      <nav className="max-w-[1366px] mx-auto h-100 p-4 md:p-8 grid grid-cols-3 md:grid-col-1 gap-5 md:gap-0 justify-between items-center">
+        <div className="hidden md:flex flex-row uppercase text-sm font-light justify-start gap-6 items-center ">
+          <Link href="/camps" className="hover:text-gray-400">
+            Campgrounds
+          </Link>
+          <Link href="/parks" className="hover:text-gray-400">
+            Parks
           </Link>
         </div>
-        <div className="hover:text-gray-400 text-sm font-light ml-6 hidden md:flex items-center justify-end ">
-          <Link href="/parks">LOG IN</Link>
-        </div>
-       
-        <div
-          onClick={handleSmallScreenNav}
-          className="flex md:hidden items-center justify-end overflow-hidden"
-        >
-          {/* if menu icon changes from false to true, I want to do something, else, I want to do something else */}
-          {menuIcon ? <SlArrowUp size={20} /> : <SlMenu size={20} />}
+        <div className=" md:flex items-center justify-center ">
+          <Link href="/">
+            <span className="font-bold text-4xl mx-auto">ZEN</span>
+          </Link>
         </div>
 
-        {/* smaller screen navbar*/}
-        <div
-          className={
-            menuIcon
-              ? "md:hidden absolute top-[100px] right-0 bottom-0 left-0 flex justify-center bg-yellow-10 items-center w-full h-screen ease-in duration-300 bg-opacity-90 overflow-hidden"
-              : "md:hidden absolute top-[100px] right-0 translate-x-full flex justify-center bg-yellow-10 items-center w-full h-screen ease-in duration-300 bg-opacity-90 overflow-hidden"
-          }
-        >
-          <div className="w-full overflow-hidden">
-            <ul>
-              <li
-                onClick={handleSmallScreenNav}
-                className="px-5 hover:text-gray-400 cursor-pointer text-4xl tracking-wider ml-6 leading-loose"
-              >
-                <Link href="/parks">PARKS</Link>
-              </li>
-              <li
-                onClick={handleSmallScreenNav}
-                className="px-5 hover:text-gray-400 cursor-pointer text-4xl tracking-wide ml-6 leading-loose"
-              >
-                <Link href="/camps">CAMPGROUNDS</Link>
-              </li>
+        <div className="md:flex hidden">
+          {isUserLoggedIn ? (
+            <div className="hover:text-gray-400 text-sm font-light hidden gap-10 md:flex items-center justify-self-end ">
+              <Link href="/">SIGN OUT</Link>
+              <Link href="/profile">
+                <Image
+                  src="reshot-icon-camping-tent-LHPJ9STM27.svg"
+                  width={37}
+                  height={37}
+                  className=""
+                  alt="profile"
+                />
+              </Link>
+            </div>
+          ) : (
+            <>
+              {providers &&
+                Object.values(providers).map((provider) => (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      signIn(provider.id);
+                    }}
+                    className="text-sm font-light text-left"
+                  >
+                    SIGN IN
+                  </button>
+                ))}
+            </>
+          )}
+        </div>
 
-              <li
-                onClick={handleSmallScreenNav}
-                className="px-5 hover:text-gray-400 cursor-pointer text-3xl tracking-wider ml-6 leading-loose"
-              >
-                <Link href="/login">LogIn</Link>
-              </li>
-            </ul>
-          </div>
+        <div className="md:hidden flex relative">
+          {isUserLoggedIn ? (
+            <div className="flex justify-self-end"></div>
+          ) : (
+            <>
+              {providers &&
+                Object.values(providers).map((provider) => (
+                  <button
+                    type="button"
+                    key={provider.name}
+                    onClick={() => {
+                      signIn(provider.id);
+                    }}
+                    className="black_btn"
+                  >
+                    Sign in
+                  </button>
+                ))}
+            </>
+          )}
         </div>
       </nav>
     </header>
