@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 import { SlMenu, SlArrowUp, SlMagnifier } from "react-icons/sl";
 import { useMediaQuery } from "react-responsive";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-import CustomButton from "./CustomButton";
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -51,7 +50,14 @@ const Navbar = () => {
         <div className="md:flex hidden">
           {session?.user ? (
             <div className="hover:text-gray-400 text-sm font-light hidden gap-10 md:flex items-center justify-self-end ">
-              <Link href="/">Sign Out</Link>
+              <Link
+                href="/"
+                onClick={() => {
+                  signOut();
+                }}
+              >
+                Sign Out
+              </Link>
               <Link href="/profile">
                 <Image
                   src={session?.user.image}

@@ -25,7 +25,7 @@ const ParkCard = ({ park }: ParkDetailsProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-col p-6 justify-center items-start text-black-100 bg-white-10 shadow-md hover:bg-white hover:shadow-md rounded-3xl">
+    <div className="flex flex-col p-6 justify-center items-start text-black-100 bg-white-0 shadow-md hover:bg-white hover:shadow-md rounded-3xl">
       <div className="w-full flex justify-between items-start gap-2">
         <h2 className="font-normal text-2xl tracking-widest my-2.5">
           {park.fullName}
