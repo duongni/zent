@@ -63,6 +63,8 @@ const ExtraHeader = () => {
           className="flex flex-col justify-center items-center text-center relative mt-[200px] xs:mt-0 py-2 px-5 rounded-full text-yellow-10 font-medium drop-shadow-2xl text-lg leading-loose"
           style={{ textShadow: "0 2px 4px rgba(0, 0, 0, 0.5)" }}
         >
+          <div className="">Sign in for a serene adventure with Zen.</div>
+          <div className="">Explore nature's beauty effortlessly!</div>
           <div className="mt-[30px]">
             <button
               className="px-5 py-2 bg-yellow-10 text-black font-normal rounded-full focus:outline-none hover:bg-yellow-10 hover:scale-125"
