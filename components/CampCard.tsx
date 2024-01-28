@@ -4,9 +4,8 @@ import { CampDetails } from "@/types";
 import Image from "next/image";
 import { useState } from "react";
 import CustomButton from "./CustomButton";
-//import CampInfo from "./CampInfo";
+import CampInfo from "./CampInfo";
 import { GoArrowUpRight } from "react-icons/go";
-import CampInfo from "../app/camps/[id]/page";
 
 interface CampDetailsProps {
   camp: CampDetails;
