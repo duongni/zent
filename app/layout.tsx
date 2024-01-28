@@ -9,15 +9,16 @@ export const metadata: Metadata = {
   description: "Curated Travel with Ease and Be Inspired.",
 };
 
-export default function RootLayout({
-  children,
-}: {
+interface RootLayoutProps {
   children: React.ReactNode;
-}) {
+  session: any; // Add the session prop here
+}
+
+export default function RootLayout({ children, session }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
-        <Provider>
+        <Provider session={session}>
           <div className="overflow-hidden h-screen overflow-y-auto ">
             <Navbar />
             {children}
