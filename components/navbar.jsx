@@ -61,7 +61,7 @@ const Navbar = () => {
               >
                 Sign Out
               </Link>
-              <Link href="/profile">
+              <Link href="/parks">
                 <Image
                   src={session?.user.image}
                   width={37}

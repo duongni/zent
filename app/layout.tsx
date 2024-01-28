@@ -9,12 +9,6 @@ export const metadata: Metadata = {
   description: "Curated Travel with Ease and Be Inspired.",
 };
 
-export const fira_mono = Fira_Mono({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "700"],
-});
-
 export default function RootLayout({
   children,
 }: {
@@ -22,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={fira_mono.className}>
+      <body>
         <Provider>
           <div className="overflow-hidden h-screen overflow-y-auto ">
             <Navbar />
