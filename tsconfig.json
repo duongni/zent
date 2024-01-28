@@ -30,7 +30,7 @@
     "/api/parks/[id]/route.ts",
     "app/api/auth/[...nextauth]/route.js",
     "components/navbar.jsx",
-    "components/Provider.jsx"
+    "components/Provider.tsx"
   ],
   "exclude": ["node_modules"]
 }
