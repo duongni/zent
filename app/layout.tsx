@@ -9,23 +9,22 @@ export const metadata: Metadata = {
   description: "Curated Travel with Ease and Be Inspired.",
 };
 
-// Define the props interface
-export interface RootLayoutProps {
-  children: React.ReactNode;
-  session?: any; // Make session optional if it's not always provided
-}
-
-export default function RootLayout({ children, session }: RootLayoutProps) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body>
-        <Provider session={session}>
-          <div className="overflow-hidden h-screen overflow-y-auto ">
+        <Provider>
+          <div className="main">
+            <div className="gradient" />
+          </div>
+          <main className="app">
             <Navbar />
             {children}
-          </div>
+          </main>
         </Provider>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
