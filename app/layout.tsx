@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 interface RootLayoutProps {
   children: React.ReactNode;
-  session: any; // Add the session prop here
+  session?: any; // Add the session prop here
 }
 
 export default function RootLayout({ children, session }: RootLayoutProps) {
