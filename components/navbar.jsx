@@ -7,8 +7,10 @@ import { useState, useEffect } from "react";
 import { SlMenu, SlArrowUp, SlMagnifier } from "react-icons/sl";
 import { useMediaQuery } from "react-responsive";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+  const router = useRouter();
   const { data: session } = useSession();
 
   const [toogleDropdown, setToogleDropdown] = useState(false);
@@ -54,6 +56,7 @@ const Navbar = () => {
                 href="/"
                 onClick={() => {
                   signOut();
+                  router.push("/");
                 }}
               >
                 Sign Out
@@ -117,6 +120,7 @@ const Navbar = () => {
                     onClick={() => {
                       setToogleDropdown(false);
                       signOut();
+                      router.push("/");
                     }}
                   >
                     Sign Out
