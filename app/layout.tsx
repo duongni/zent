@@ -9,9 +9,10 @@ export const metadata: Metadata = {
   description: "Curated Travel with Ease and Be Inspired.",
 };
 
-interface RootLayoutProps {
+// Define the props interface
+export interface RootLayoutProps {
   children: React.ReactNode;
-  session?: any; // Add the session prop here
+  session?: any; // Make session optional if it's not always provided
 }
 
 export default function RootLayout({ children, session }: RootLayoutProps) {
