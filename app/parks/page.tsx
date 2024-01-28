@@ -22,7 +22,7 @@ export default async function Parks({ searchParams }: { searchParams: any }) {
           <section>
             <div className="grid 3xl:grid-cols-4 md:grid-cols-3 grid-cols-1 w-full gap-8 pt-14">
               {allParks?.map((park) => (
-                <ParkCard park={park} />
+                <ParkCard key={park.id} park={park} />
               ))}
             </div>
           </section>
