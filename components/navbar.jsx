@@ -73,6 +73,7 @@ const Navbar = () => {
               {providers &&
                 Object.values(providers).map((provider) => (
                   <button
+                    key={provider.id}
                     type="button"
                     onClick={() => {
                       signIn(provider.id);

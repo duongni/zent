@@ -27,9 +27,9 @@ const ExtraHeader = () => {
                 className="max-w-prose text-yellow-10 xs:text-black font-normal drop-shadow-2xl text-xl leading-loose"
                 style={{ textShadow: "0 2px 4px rgba(0, 0, 0, 0.5)" }}
               >
-                Discover nature's sanctuary at Zen Parks. Immerse yourself in
-                serene landscapes, vibrant trails, and breathtaking views. Your
-                escape to tranquility begins here.
+                Discover nature&apos;s sanctuary at Zen Parks. Immerse yourself
+                in serene landscapes, vibrant trails, and breathtaking views.
+                Your escape to tranquility begins here.
               </p>
             </div>
           </div>
@@ -68,7 +68,7 @@ const ExtraHeader = () => {
             className="flex flex-col justify-center items-center text-center relative mt-[200px] xs:mt-0 py-2 px-5 rounded-full text-yellow-10 font-medium drop-shadow-2xl text-lg leading-loose"
             style={{ textShadow: "0 2px 4px rgba(0, 0, 0, 0.5)" }}
           >
-            <div className="">Explore nature's beauty effortlessly!</div>
+            <div className="">Explore nature&apos;s beauty effortlessly!</div>
           </div>
         </div>
       </div>

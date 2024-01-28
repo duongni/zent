@@ -24,7 +24,7 @@ export default async function Camps({ searchParams }: { searchParams: any }) {
           <section>
             <div className="grid 3xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14">
               {allCamps?.map((camp) => (
-                <CampCard camp={camp} />
+                <CampCard key={camp.id} camp={camp} />
               ))}
             </div>
           </section>

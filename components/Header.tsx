@@ -23,12 +23,12 @@ const Header = () => {
       <div className="flex flex-col justify justify-between items-center ">
         <div className="md:mt-[180px] mt-[120px] text-6xl xs:text-sm text-center font-normal  tracking-wider md:leading-loose sm:leading-relaxed drop-shadow-2xl text-white-0">
           <div>Your</div> <div>Serene Path</div> <div>to</div>{" "}
-          <div>Nature's</div>
+          <div>Nature&apos;s</div>
           Beauty
         </div>
         <div className="text-white-0 flex flex-col justify justify-between items-center text-center relative mt-[160px] xs:mt-0 py-2 px-5 rounded-full  font-medium drop-shadow-2xl text-xl leading-loose">
           <div className="">Sign in for a serene adventure with Zen.</div>
-          <div className="">Explore nature's beauty effortlessly!</div>
+          <div className="">Explore nature&apos;s beauty effortlessly!</div>
         </div>
         <div className="flex flex-row bg-yellow-10  max-w-{600px} items-center rounded-full my-[150px] focus:outline-none hover:bg-yellow-10  hover:scale-125 mb-5">
           <button className="px-5 py-2 rounded-full" onClick={handleJoinClick}>
@@ -85,9 +85,9 @@ const Header = () => {
                 className="max-w-prose text-white-0 xs:text-black font-normal drop-shadow-2xl text-xl leading-loose"
                 style={{ textShadow: "0 2px 4px rgba(0, 0, 0, 0.5)" }}
               >
-                Discover nature's sanctuary at Zen Parks. Immerse yourself in
-                serene landscapes, vibrant trails, and breathtaking views. Your
-                escape to tranquility begins here.
+                Discover nature&apos;s sanctuary at Zen Parks. Immerse yourself
+                in serene landscapes, vibrant trails, and breathtaking views.
+                Your escape to tranquility begins here.
               </p>
             </div>
           </div>
@@ -117,7 +117,7 @@ const Header = () => {
           style={{ textShadow: "0 2px 4px rgba(0, 0, 0, 0.5)" }}
         >
           <div className="">Sign in for a serene adventure with Zen.</div>
-          <div className="">Explore nature's beauty effortlessly!</div>
+          <div className="">Explore nature&apos;s beauty effortlessly!</div>
           <div className="mt-[30px] mb-[100px]">
             <button
               className="px-5 py-2 bg-white-0 text-black font-normal rounded-full focus:outline-none hover:bg-yellow-10 hover:scale-125"
